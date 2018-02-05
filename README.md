@@ -1,6 +1,15 @@
 # Kea
 docker images for running ISC Kea
 
+
+These images are built using packages that aren't in Alpine yet.  I've built
+them  from [poppypop](https://hub.docker.com/u/poppypop/)'s fork of aport.
+See: https://github.com/alpinelinux/aports/pull/3007
+
+I'm building my images with one service per container.  If you prefer to
+have multiple related services running in one container you should probably
+take a look at [poppypop/docker-kea](https://hub.docker.com/r/poppypop/docker-kea/)
+
 # Examples
 ```bash
 docker run --rm --name kea -v kea_dhcp4_config:/etc/kea -v kea_data:/var/kea/kea --net="host" bsw2/kea-dhcp4
